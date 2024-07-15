@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspiring Bio Scientists</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Identifying Malignant vs. Benign Breast Tumors</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="input1">Mean Radius:</label>
+                <input type="text" class="form-control" id="input1" name="input1" required>
+            </div>
+            <div class="form-group">
+                <label for="input2">Mean Area:</label>
+                <input type="text" class="form-control" id="input2" name="input2" required>
+            </div>
+            <div class="form-group">
+                <label for="input3">Worst Radius:</label>
+                <input type="text" class="form-control" id="input3" name="input3" required>
+            </div>
+            <div class="form-group">
+                <label for="input4">Worst Area:</label>
+                <input type="text" class="form-control" id="input4" name="input4" required>
+            </div>
+            <div class="form-group">
+                <label for="input5">Worst Concavity:</label>
+                <input type="text" class="form-control" id="input5" name="input5" required>
+            </div>
+            <div class="form-group">
+                <label for="input6">Perimeter Error: </label>
+                <input type="text" class="form-control" id="input6" name="input6" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if prediction %}
+        <div class="mt-4">
+            <h4>Prediction: {{ prediction }}</h4>
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="mt-4 text-danger">
+            <h4>Error: {{ error }}</h4>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
